@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f172a;
+  /* Subtle dark grid background */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+}
+
+/* On-screen instruction label */
+.instructions {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #64748b;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.instructions span {
+  color: #38bdf8;
+  font-weight: 600;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* The movable element */
+#mybox {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4),
+              0 8px 10px -6px rgba(99, 102, 241, 0.2);
+  /* Smooth movement */
+  transition: top 0.08s ease-out, left 0.08s ease-out, background-color 0.2s ease, transform 0.15s ease;
+}
+
+#mybox:active {
+  transform: scale(0.95);
+}
